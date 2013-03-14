@@ -1,0 +1,31 @@
+{
+	"name": "MyExt",
+	"version":"1.0",
+	"manifest_version": 2,
+	"description":"Keyboard extension",
+
+	"permissions": [
+	"tabs",
+	"http://hubblesite.org/*",
+	"http://*/*",
+	"https://*/*",
+	"storage"
+	],
+
+	"browser_action": {
+		"default_title":"Hubble",
+		"default_icon":"images/icon1.png",
+		"default_popup":"popup.html"
+	},
+
+	"options_page": "options.html",
+
+	"content_scripts": [
+	{
+		"matches": ["http://*/*"],
+		"js": ["selection.js"],
+		"run_at": "document_start",
+		"all_frames": true
+	}
+	]
+}
